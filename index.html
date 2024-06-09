@@ -14,6 +14,7 @@
 
     <title>Frontend Mentor | Intro component with sign up form</title>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
     <script src="./app.js" defer></script>
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   </head>
@@ -34,23 +35,29 @@
             <input type="text" class="firstName" placeholder="First Name" />
             <div class="error_icon hide">!</div>
           </label>
+          <p class="error_msg hide">First Name cannot be empty.</p>
           <label for="lastName">
             <input type="text" class="lastName" placeholder="Last Name" />
             <div class="error_icon hide">!</div>
           </label>
+          <p class="error_msg hide">Last Name cannot be empty.</p>
           <label for="email">
             <input type="email" class="email" placeholder="Email" />
             <div class="error_icon hide">!</div>
           </label>
+          <p class="error_msg hide">This doesn't look like an email.</p>
           <label for="password">
             <input type="password" class="password" placeholder="Password" />
             <div class="error_icon hide">!</div>
+            <div class="password_toggle">
+              <img src="./images/eye-slash-regular.svg" alt="eyeSlash">
+            </div>
           </label>
+          <!-- <img src="./images/eye-slash-regular.svg" alt="eyeSlash"> -->
+          <p class="error_msg hide">Password cannot be empty.</p>
           <button id="button">Claim your free trial</button>
-          <small
-            >By clicking the button, you are agreeing to our
-            <span> Terms and Services</span></small
-          >
+          <small>By clicking the button, you are agreeing to our
+            <span> Terms and Services</span></small>
         </form>
       </div>
     </main>
