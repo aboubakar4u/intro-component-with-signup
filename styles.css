@@ -131,16 +131,6 @@ label {
   background: none;
   cursor: pointer;
   padding: 0;
-  /* width: 23px;
-  height: 23px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  border: 1px solid black;
-  padding: .7rem;
-  right: 20px;
-  top: 13px; */
 }
 
 .password_toggle img {
