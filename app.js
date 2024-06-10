@@ -4,16 +4,11 @@ const firstName = document.querySelector('.firstName');
 const lastName = document.querySelector('.lastName');
 const email = document.querySelector('.email');
 const password = document.querySelector('.password');
-// Add a query selector to the error_icon class.
 const errorIcon = document.querySelectorAll(".error_icon");
-// Add a query selector to the error_msg class.
 const errorMsg = document.querySelectorAll(".error_msg");
-// Add a query selector to the password_toggle id.
-const passwordToggle = document.querySelector(".password_toggle");
+const passwordToggle = document.querySelector('.password_toggle');
 
 console.log(firstName);
-
-// console.log(firstName, lastName, email, password);
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -23,7 +18,6 @@ form.addEventListener('submit', (e) => {
   const passwordVal = password.value;
   console.log(fName, lName, emailVal, passwordVal);
 
-  
   // Check first name
   if (fName === '') {
     firstName.classList.add('error');
@@ -35,7 +29,6 @@ form.addEventListener('submit', (e) => {
     errorIcon[0].classList.add('hide');
   }
   // Check last name
-
   if (lName === '') {
     lastName.classList.add('error');
     errorIcon[1].classList.remove('hide');
@@ -46,7 +39,6 @@ form.addEventListener('submit', (e) => {
     errorMsg[1].classList.add("hide")
   }
   // Check email
-
   if (!validateEmail(emailVal) || emailVal === '') {
     email.classList.add('error');
     errorIcon[2].classList.remove('hide');
@@ -56,9 +48,7 @@ form.addEventListener('submit', (e) => {
     errorIcon[2].classList.add('hide');
     errorMsg[2].classList.add("hide")
   }
-
   // Check password
-
   if (passwordVal === '') {
     password.classList.add('error');
     errorIcon[3].classList.remove('hide');
@@ -70,24 +60,18 @@ form.addEventListener('submit', (e) => {
   }
 });
 
-
-passwordToggle.addEventListener("click", (ev)=>{
-
-  if (password.type === "password"){
+passwordToggle.addEventListener("click", () => {
+  if (password.type === "password") {
     password.type = "text";
-    passwordToggle.classList.add("./images/eye-regular.svg");
-    passwordToggle.classList.remove("./images/eye-slash-regular.svg");
+    passwordToggle.innerHTML = '<img src="./images/eye-regular.svg" alt="Hide Password" />';
   } else {
     password.type = "password";
-    passwordToggle.classList.add("./images/eye-slash-regular.svg");
-    passwordToggle.classList.remove("./images/eye-regular.svg");
+    passwordToggle.innerHTML = '<img src="./images/eye-slash-regular.svg" alt="Show Password" />';
   }
 });
 
-
-//Validate email
+// Validate email
 function validateEmail(email) {
-  var re =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
